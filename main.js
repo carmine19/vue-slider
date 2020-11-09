@@ -10,6 +10,8 @@ var app = new Vue({
     //e gestisce
     data: {
         ele_corrente : 0,
+        image: null,
+        timer: 0,
         immagini_slider : [
             'https://picsum.photos/seed/picsum/200/300',
             'https://picsum.photos/id/237/200/300',
@@ -20,6 +22,7 @@ var app = new Vue({
         icone_nere: 'icone_nere',
     },
 
+
     //i methods sono dove definiamo le nostre funzioni e possono essere benissimamente scritte in es6
     methods: {
 
@@ -29,6 +32,7 @@ var app = new Vue({
             this.ele_corrente += 1;
             if(this.ele_corrente === this.immagini_slider.length) {
                 this.ele_corrente = 0;
+                this.reset_play();
             }
         },
 
@@ -38,6 +42,7 @@ var app = new Vue({
             this.ele_corrente -= 1;
             if(this.ele_corrente < 0) {
                 this.ele_corrente = this.immagini_slider.length -1;
+                this.reset_play();
             }
         },
 
@@ -51,9 +56,29 @@ var app = new Vue({
                 this.bianco = 'bianco';
                 this.icone_nere = 'icone_nere'
             }
-        }
+        },
+        //questa funzione al click del pallino imposta l'immagine corrente
+        click_pallino(indice_corrente) {
+           this.ele_corrente = indice_corrente;
+        },
+
+        reset_play() {
+            clearInterval(this.timer);
+            this.play();
+        },
+
+        play() {
+            let app = this;
+            this.timer = setInterval(function() {
+             app.next_img();
+        }, 2000);}
+
+
 
         },
+
+
+
 
 })
 

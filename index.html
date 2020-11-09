@@ -29,7 +29,7 @@
                          poi aggiungo con l operatore ternario una classe se l'indice corrente dell array è uguale a quello dei round,
                          se non lo è non faccio nulla-->
                         <i class="fas fa-circle" v-for="(ele_corrente_roud, indice_corrente) in immagini_slider"
-                           :class="indice_corrente === ele_corrente ? 'active' : ''"></i>
+                           :class="indice_corrente === ele_corrente ? 'active' : ''" @click="click_pallino(indice_corrente)"></i>
                     </div>
                 </div>
                 <div class="next">
