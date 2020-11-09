@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.bianco {
+    background: #fff;
+    transition: 0.3s;
+}
+
+.nero {
+    background: #323232;
+    transition: 0.3s;
+}
+
+.icone_nere {
+    color: #323232;
+    transition: 0.3s;
+}
+
+.icone_bianche {
+    color: #fff;
+    transition: 0.3s;
+}
+
+.box-slider {
+    width: 700px;
+    height: 500px;
+    display:flex;
+}
+
+.box-slider .slider {
+    flex-grow: 1;
+}
+
+.box-slider .slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.box-slider .prev, .next {
+    margin: auto;
+}
+
+.box-slider .prev {
+    margin-right: 10px;
+}
+
+.box-slider .next {
+    margin-left: 10px;
+}
+
+.box-slider .slider {
+    position: relative;
+}
+
+.box-slider .slider .round {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.active {
+    color: chartreuse;
+}
