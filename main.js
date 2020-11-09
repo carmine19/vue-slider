@@ -62,20 +62,25 @@ var app = new Vue({
            this.ele_corrente = indice_corrente;
         },
 
+        // resetto l interval del play
         reset_play() {
             clearInterval(this.timer);
             this.play();
         },
 
+        // questa funzione imposta un intervel di 2 secondi alla funzione next_img
         play() {
             let app = this;
             this.timer = setInterval(function() {
              app.next_img();
         }, 2000);}
 
-
-
         },
+
+    // aggiungo l'hook per far partire la funzione a pagina caricata
+    created: function() {
+    this.play();
+  }
 
 
 
